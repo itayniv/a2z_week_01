@@ -24,7 +24,7 @@
     width: 200px;
 
     &:focus {
-      outline: none;
+      outline: none !important;
     }
   }
 

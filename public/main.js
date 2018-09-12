@@ -114,7 +114,12 @@ function mixedContent(){
   //combine two topics
   let result = searchResult1.concat(searchResult2);
   let string = result.split("");
-  string.sort(function(a, b){return 0.5 - Math.random()});;
+  string.sort(function(a, b){return 0.5 - Math.random()});
+  let shortenedName = string.length = (Math.floor(Math.random() * 7) + 5 ); 
+;
+  // combinedNameString.length = 7;
+  console.log(shortenedName);
+
   let combinedNameString = string.toString();
   combinedNameString = combinedNameString.replace(/#|,/g,'')
   let combinedNameStringLowercase = combinedNameString.toLowerCase();
@@ -141,20 +146,27 @@ function mixedContent(){
   //combine two arrays
   let combinedArrays = res1.concat(res2);
 
-  // console.log("uncut", combinedArrays, combinedArrays.length);
-  // console.log("cut", combinedArrays.slice(30), combinedArrays.length );
 
 
   combinedArrays.sort(function(a, b){return 0.5 - Math.random()});
   let shortPar = combinedArrays;
   combinedArrays.length = 50;
   let combinedString = combinedArrays.toString();
+  combinedString = combinedString.toLowerCase();
+
+  //remove first letter
+  let combinedStringMinLetter = combinedString.substr(1);
+  let firstLetterParagraph = combinedString.charAt(0); // alerts 's'
+  let firstLetterParagraphUpper = firstLetter.toUpperCase();
+
+  let newParagraphUpperLetter = firstLetterParagraphUpper + combinedStringMinLetter;
+  console.log("newParagraphUpperLetter", newParagraphUpperLetter);
 
 
 
-  let combinedNoComma = combinedString;
-  combinedNoComma = combinedNoComma.replace(/#|,/g,' ');
-  let combinedlowercase = combinedNoComma.toLowerCase();
+  let combinedNoComma = newParagraphUpperLetter;
+  newParagraphUpperLetter = combinedNoComma.replace(/#|,/g,' ');
+  // let combinedlowercase = combinedNoComma.toLowerCase();
 
-  document.getElementById("mixedAnswer").innerHTML= combinedlowercase + ".";
+  document.getElementById("mixedAnswer").innerHTML= newParagraphUpperLetter + ".";
 }
