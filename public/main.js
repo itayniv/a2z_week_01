@@ -115,10 +115,8 @@ function mixedContent(){
   let result = searchResult1.concat(searchResult2);
   let string = result.split("");
   string.sort(function(a, b){return 0.5 - Math.random()});
-  let shortenedName = string.length = (Math.floor(Math.random() * 7) + 5 ); 
-;
-  // combinedNameString.length = 7;
-  console.log(shortenedName);
+  let shortenedName = string.length = (Math.floor(Math.random() * 7) + 5 );
+  // console.log(shortenedName);
 
   let combinedNameString = string.toString();
   combinedNameString = combinedNameString.replace(/#|,/g,'')
@@ -130,8 +128,10 @@ function mixedContent(){
   //get the first letter
   let firstLetter = combinedNameStringLowercase.charAt(0); // alerts 's'
   let firstLetterUpper = firstLetter.toUpperCase();
-  console.log(firstLetterUpper);
+  // console.log(firstLetterUpper);
 
+  let finalPar = firstLetterUpper+combinedNameStringLowercaseWithout;
+  console.log(finalPar);
   document.getElementById("mixedHeader").innerHTML = firstLetterUpper+combinedNameStringLowercaseWithout;
 
 
